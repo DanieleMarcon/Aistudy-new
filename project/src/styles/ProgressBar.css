@@ -1,0 +1,74 @@
+.progress-container {
+  width: 100%;
+  margin: var(--spacing-sm) 0;
+}
+
+.progress-label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-light);
+  margin-bottom: var(--spacing-xs);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background-color: var(--border-color);
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-light) 0%, var(--primary-color) 100%);
+  border-radius: var(--border-radius-full);
+  transition: width 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.progress-percentage {
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-right: var(--spacing-sm);
+}
+
+.progress-percentage-outside {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: var(--spacing-xs);
+  text-align: right;
+}
+
+/* Size variations */
+.size-small .progress-bar {
+  height: 6px;
+}
+
+.size-large .progress-bar {
+  height: 16px;
+}
+
+/* Themed progress bars */
+.clarity-bar .progress-fill {
+  width: var(--clarity-score, 0%);
+  background: linear-gradient(90deg, var(--info-light) 0%, var(--info-color) 100%);
+}
+
+.pace-bar .progress-fill {
+  width: var(--pace-score, 0%);
+  background: linear-gradient(90deg, var(--secondary-light) 0%, var(--secondary-color) 100%);
+}
+
+.confidence-bar .progress-fill {
+  width: var(--confidence-score, 0%);
+  background: linear-gradient(90deg, var(--accent-light) 0%, var(--accent-color) 100%);
+}
+
+.completeness-bar .progress-fill {
+  width: var(--completeness-score, 0%);
+  background: linear-gradient(90deg, var(--success-light) 0%, var(--success-color) 100%);
+}

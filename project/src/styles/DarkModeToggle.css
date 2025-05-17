@@ -1,0 +1,34 @@
+.darkmode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-full);
+  color: var(--text-color);
+  transition: all var(--transition-fast);
+}
+
+.darkmode-toggle:hover {
+  background-color: var(--border-light);
+  color: var(--primary-color);
+  transform: rotate(15deg);
+}
+
+.moon-icon, .sun-icon {
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
+}
+
+.moon-icon {
+  transform: rotate(0deg);
+}
+
+.sun-icon {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+  .darkmode-toggle {
+    margin-right: var(--spacing-sm);
+  }
+}
