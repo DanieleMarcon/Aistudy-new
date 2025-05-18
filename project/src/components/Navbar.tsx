@@ -45,6 +45,10 @@ const Navbar: React.FC = () => {
             <Lightbulb size={20} />
             <span>Chiedi</span>
           </Link>
+          <Link to="/risorse" className={`nav-link ${isActive('/risorse') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+            <Upload size={20} />
+            <span>Risorse</span>
+          </Link>
           <Link to="/vocabolario" className={`nav-link ${isActive('/vocabolario') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
             <BookOpen size={20} />
             <span>Vocabolario</span>
@@ -60,10 +64,6 @@ const Navbar: React.FC = () => {
           <Link to="/specchio" className={`nav-link ${isActive('/specchio') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
             <Mic size={20} />
             <span>Specchio</span>
-          </Link>
-          <Link to="/risorse" className={`nav-link ${isActive('/risorse') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
-            <Upload size={20} />
-            <span>Risorse</span>
           </Link>
           <Link to="/accessibilita" className={`nav-link ${isActive('/accessibilita') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
             <Settings size={20} />

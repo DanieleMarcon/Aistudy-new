@@ -20,8 +20,8 @@ const Footer: React.FC = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/studiamo">Studiamo</Link></li>
             <li><Link to="/chiedi">Chiedi</Link></li>
-            <li><Link to="/vocabolario">Vocabolario</Link></li>
             <li><Link to="/risorse">Risorse</Link></li>
+            <li><Link to="/vocabolario">Vocabolario</Link></li>
           </ul>
         </div>
         

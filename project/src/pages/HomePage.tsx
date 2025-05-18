@@ -77,9 +77,14 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      <section className="hero-section">
+        <div className="hero-content">
+          <p className="hero-subtitle">Esplora e scegli uno dei seguenti strumenti per migliorare il tuo metodo di studio</p>
+        </div>
+      </section>
+
       <section className="features-section">
-        <h2>Esplora gli strumenti</h2>
-        
+
         <div className="cards-container">
           <Card 
             title="Studiamo insieme" 
@@ -93,6 +98,13 @@ const HomePage: React.FC = () => {
             description="Ricerca veloce con suggerimenti di approfondimento" 
             icon={<Lightbulb size={32} />}
             to="/chiedi"
+          />
+          
+          <Card 
+            title="Risorse" 
+            description="Carica e organizza le tue fonti di studio" 
+            icon={<Upload size={32} />}
+            to="/risorse"
           />
           
           <Card 
@@ -124,24 +136,12 @@ const HomePage: React.FC = () => {
           />
           
           <Card 
-            title="Risorse" 
-            description="Carica e organizza le tue fonti di studio" 
-            icon={<Upload size={32} />}
-            to="/risorse"
-          />
-          
-          <Card 
             title="Accessibilità" 
             description="Personalizza l'app per le tue esigenze" 
             icon={<Settings size={32} />}
             to="/accessibilita"
           />
         </div>
-      </section>
-
-      <section className="cta-section">
-        <h2>Inizia subito il tuo percorso</h2>
-        <p>Scegli uno degli strumenti sopra per migliorare il tuo metodo di studio</p>
       </section>
     </div>
   );
