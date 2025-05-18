@@ -1,13 +1,45 @@
-import React from 'react';
-import { BookOpen, BookText, Lightbulb, Map, Mic, Settings, Upload } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Book, BookText, Lightbulb, Map, Mic, Settings, Upload } from 'lucide-react';
 import Card from '../components/Card';
 import ProgressBar from '../components/ProgressBar';
 import Badge from '../components/Badge';
 import '../styles/HomePage.css';
 
 const HomePage: React.FC = () => {
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleAudio = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
   return (
     <div className="home-page">
+      <section className="hero-video-section">
+        <div className="video-container">
+          <video
+            ref={videoRef}
+            className="hero-video"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/Aistudy.mp4" type="video/mp4" />
+            Il tuo browser non supporta la riproduzione di video.
+          </video>
+          {isMuted && (
+            <button className="unmute-button" onClick={toggleAudio}>
+              🔊 Attiva Audio
+            </button>
+          )}
+        </div>
+      </section>
+
       <section className="hero-section">
         <div className="hero-content">
           <h1>Benvenuto su <span className="highlight">AIstudy</span></h1>
@@ -33,12 +65,14 @@ const HomePage: React.FC = () => {
       </section>
 
       <section className="progress-section">
-        <h2>Il tuo progresso</h2>
-        <div className="progress-overview">
-          <ProgressBar progress={65} label="Progresso complessivo" />
-          <div className="badges-container">
-            <Badge text="Principiante" variant="primary" icon={<BookOpen size={16} />} />
-            <Badge text="3 giorni consecutivi" variant="success" pulsing={true} />
+        <div className="progress-card">
+          <h2>Il tuo progresso</h2>
+          <div className="progress-overview">
+            <ProgressBar progress={65} label="Progresso complessivo" />
+            <div className="badges-container">
+              <Badge text="Principiante" variant="primary" icon={<BookOpen size={16} />} />
+              <Badge text="3 giorni consecutivi" variant="success" pulsing={true} />
+            </div>
           </div>
         </div>
       </section>
@@ -64,7 +98,7 @@ const HomePage: React.FC = () => {
           <Card 
             title="Vocabolario" 
             description="Glossario con definizioni personalizzabili" 
-            icon={<BookOpen size={32} />}
+            icon={<Book size={32} />}
             to="/vocabolario"
           />
           
